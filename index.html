@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <header>
+        <h1>Gestión de Clientes</h1>
+    </header>
+    <main>
+        <!-- Formulario añadir clientes -->
+        <div id="añadir-cliente">
+            <h2>Añadir Clientes</h2>
+            <form id="formulario1">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+
+                <button type="submit">Añadir Cliente</button>
+            </form>
+        </div>
+
+        <!-- Listado de clientes -->
+        <div id="lista-clientes">
+            <h2>Lista de Clientes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se insertarán los clientes dinámicamente-->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!--Modal de edición-->
+    <div id="modal-editar" class="modal oculto">
+        <div class="modal-contenido">
+            <span class="cerrar-modal">&times;</span>
+            <h3>Editar Cliente</h3>
+            <form id="formulario2">
+                <input type="hidden" id="id-editar" name="id">
+                <label for="nombre-editar">Nombre:</label>
+                <input type="text" id="nombre-editar" name="nombre" required>
+
+                <label for="email-editar">Email:</label>
+                <input type="email" id="email-editar" name="email" required>
+
+                <label for="telefono-editar">Teléfono:</label>
+                <input type="tel" id="telefono-editar" name="telefono" required>
+
+                <button type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
