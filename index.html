@@ -2,6 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Title</title>
 </head>
 <body>
@@ -13,15 +15,9 @@
         <div id="añadir-cliente">
             <h2>Añadir Clientes</h2>
             <form id="formulario1">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="telefono">Teléfono:</label>
-                <input type="tel" id="telefono" name="telefono" required>
-
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
                 <button type="submit">Añadir Cliente</button>
             </form>
         </div>
