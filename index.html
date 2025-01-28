@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
-    <title>Title</title>
+    <title>Gestión de Clientes</title>
 </head>
 <body>
     <header>
@@ -27,29 +27,36 @@
             <h2>Lista de Clientes</h2>
             <table>
                 <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Correo</th>
-                        <th>Teléfono</th>
-                        <th>Acciones</th>
-                    </tr>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th>Acciones</th>
+                </tr>
                 </thead>
-                <tbody>
-                    <!-- Aquí se insertarán los clientes dinámicamente-->
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <button class="editar">Editar</button>
-                            <button class="eliminar">Eliminar</button>
-                        </td>
-                    </tr>
+                <tbody id="clientes-tbody">
+                <!-- Aquí se insertarán los clientes dinámicamente-->
                 </tbody>
             </table>
         </div>
-    </main>
 
+
+        <!-- Modal de Edición -->
+        <div id="modal-edicion" style="display:none;">
+            <div>
+                <h2>Editar Cliente</h2>
+                <form id="formulario-edicion">
+                    <input type="hidden" id="edit-id">
+                    <input type="text" id="edit-nombre" name="nombre" placeholder="Nombre" required>
+                    <input type="email" id="edit-email" name="email" placeholder="Correo electrónico" required>
+                    <input type="tel" id="edit-telefono" name="telefono" placeholder="Teléfono" required pattern="[0-9]{9}">
+                    <button type="submit">Guardar Cambios</button>
+                    <button type="button" onclick="cerrarModal()">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </main>
     <!-- Scripts -->
     <script src="app.js"></script>
 </body>
