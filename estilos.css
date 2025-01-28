@@ -12,6 +12,34 @@ header {
 }
 
 main {
-    padding: 20px;
+    padding: 16px;
 }
 
+#formulario1 {
+    display: flex;
+    gap: 10px;
+}
+
+#formulario1 input {
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f0f0f0;
+    color: black;
+}

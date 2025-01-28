@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="estilos.css">
     <title>Title</title>
 </head>
 <body>
@@ -17,18 +17,17 @@
             <form id="formulario1">
                 <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
                 <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
-                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required pattern="[0-9]{9}">
                 <button type="submit">Añadir Cliente</button>
             </form>
         </div>
 
-        <!-- Listado de clientes -->
+        <!-- Tabla de clientes -->
         <div id="lista-clientes">
             <h2>Lista de Clientes</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Nombre</th>
                         <th>Email</th>
                         <th>Teléfono</th>
@@ -37,32 +36,21 @@
                 </thead>
                 <tbody>
                     <!-- Aquí se insertarán los clientes dinámicamente-->
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <button class="editar">Editar</button>
+                            <button class="eliminar">Eliminar</button>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </main>
 
-    <!--Modal de edición-->
-    <div id="modal-editar" class="modal oculto">
-        <div class="modal-contenido">
-            <span class="cerrar-modal">&times;</span>
-            <h3>Editar Cliente</h3>
-            <form id="formulario2">
-                <input type="hidden" id="id-editar" name="id">
-                <label for="nombre-editar">Nombre:</label>
-                <input type="text" id="nombre-editar" name="nombre" required>
-
-                <label for="email-editar">Email:</label>
-                <input type="email" id="email-editar" name="email" required>
-
-                <label for="telefono-editar">Teléfono:</label>
-                <input type="tel" id="telefono-editar" name="telefono" required>
-
-                <button type="submit">Guardar Cambios</button>
-            </form>
-        </div>
-    </div>
-
+    <!-- Scripts -->
     <script src="app.js"></script>
 </body>
 </html>
