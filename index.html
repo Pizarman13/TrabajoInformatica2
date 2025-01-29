@@ -7,57 +7,57 @@
     <title>Gestión de Clientes</title>
 </head>
 <body>
-    <header>
-        <h1>Gestión de Clientes</h1>
-    </header>
-    <main>
-        <!-- Formulario añadir clientes -->
-        <div id="añadir-cliente">
-            <h2>Añadir Clientes</h2>
-            <form id="formulario1">
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
-                <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
-                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required pattern="[0-9]{9}">
-                <button type="submit">Añadir Cliente</button>
-            </form>
-        </div>
+<header>
+    <h1>Gestión de Clientes</h1>
+</header>
+<main>
+    <!-- Formulario añadir clientes -->
+    <div id="añadir-cliente">
+        <h2>Añadir Clientes</h2>
+        <form id="formulario1">
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+            <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required pattern="[0-9]{9}">
+            <button type="submit">Añadir Cliente</button>
+        </form>
+    </div>
 
-        <!-- Tabla de clientes -->
-        <div id="lista-clientes">
-            <h2>Lista de Clientes</h2>
-            <table>
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Teléfono</th>
-                    <th>Acciones</th>
-                </tr>
-                </thead>
-                <tbody id="clientes-tbody">
-                <!-- Aquí se insertarán los clientes dinámicamente-->
-                </tbody>
-            </table>
-        </div>
+    <!-- Tabla de clientes -->
+    <div id="lista-clientes">
+        <h2>Lista de Clientes</h2>
+        <table>
+            <thead>
+            <tr>
+                <th id="header-id" class="clickable-header">ID</th>
+                <th id="header-nombre" class="clickable-header">Nombre</th>
+                <th id="header-email" class="clickable-header">Email</th>
+                <th id="header-telefono" class="clickable-header">Teléfono</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody id="clientes-tbody">
+            <!-- Aquí se insertarán los clientes dinámicamente-->
+            </tbody>
+        </table>
+    </div>
 
 
-        <!-- Modal de Edición -->
-        <div id="modal-edicion" style="display:none;">
-            <div>
-                <h2>Editar Cliente</h2>
-                <form id="formulario-edicion">
-                    <input type="hidden" id="edit-id">
-                    <input type="text" id="edit-nombre" name="nombre" placeholder="Nombre" required>
-                    <input type="email" id="edit-email" name="email" placeholder="Correo electrónico" required>
-                    <input type="tel" id="edit-telefono" name="telefono" placeholder="Teléfono" required pattern="[0-9]{9}">
-                    <button type="submit">Guardar Cambios</button>
-                    <button type="button" onclick="cerrarModal()">Cancelar</button>
-                </form>
-            </div>
-        </div>
-    </main>
-    <!-- Scripts -->
-    <script src="app.js"></script>
+<!-- Modal de Edición -->
+<div id="modal-edicion" style="display:none;">
+    <div>
+        <h2>Editar Cliente</h2>
+        <form id="formulario-edicion">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-nombre" name="nombre" placeholder="Nombre" required>
+            <input type="email" id="edit-email" name="email" placeholder="Correo electrónico" required>
+            <input type="tel" id="edit-telefono" name="telefono" placeholder="Teléfono" required pattern="[0-9]{9}">
+            <button type="submit">Guardar Cambios</button>
+            <button type="button" onclick="cerrarModal()">Cancelar</button>
+        </form>
+    </div>
+</div>
+</main>
+<!-- Scripts -->
+<script src="app.js"></script>
 </body>
 </html>
