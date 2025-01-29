@@ -1,4 +1,10 @@
 let clientes = [];
+let sortOrder = {
+    id: 'asc',
+    nombre: 'asc',
+    email: 'asc',
+    telefono: 'asc'
+};
 
 document.getElementById('formulario1').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -26,6 +32,7 @@ document.getElementById('formulario1').addEventListener('submit', function(event
 function actualizarTabla() {
     const tbody = document.getElementById('clientes-tbody');
     tbody.innerHTML = '';
+
     clientes.forEach(cliente => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
@@ -82,3 +89,21 @@ function eliminarCliente(id) {
 function cerrarModal() {
     document.getElementById('modal-edicion').style.display = 'none';
 }
+
+function sortTable(column) {
+    const order = sortOrder[column] === 'asc' ? 'desc' : 'asc';
+    sortOrder[column] = order;
+
+    clientes.sort((a, b) => {
+        if (a[column] < b[column]) return order === 'asc' ? -1 : 1;
+        if (a[column] > b[column]) return order === 'asc' ? 1 : -1;
+        return 0;
+    });
+
+    actualizarTabla();
+}
+
+document.getElementById('header-id').addEventListener('click', () => sortTable('id'));
+document.getElementById('header-nombre').addEventListener('click', () => sortTable('nombre'));
+document.getElementById('header-email').addEventListener('click', () => sortTable('email'));
+document.getElementById('header-telefono').addEventListener('click', () => sortTable('telefono'));
