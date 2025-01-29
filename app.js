@@ -1,4 +1,7 @@
+// Inicializa un array vacío para almacenar los clientes
 let clientes = [];
+
+// Define el estado inicial del orden para cada columna
 let sortOrder = {
     id: 'asc',
     nombre: 'asc',
@@ -6,6 +9,7 @@ let sortOrder = {
     telefono: 'asc'
 };
 
+// Formulario para añadir clientes
 document.getElementById('formulario1').addEventListener('submit', function(event) {
     event.preventDefault();
     const nombre = document.getElementById('nombre').value;
@@ -60,6 +64,7 @@ function editarCliente(id) {
     }
 }
 
+// Formulario para editar clientes
 document.getElementById('formulario-edicion').addEventListener('submit', function(event) {
     event.preventDefault();
     const id = parseInt(document.getElementById('edit-id').value);
@@ -86,10 +91,12 @@ function eliminarCliente(id) {
     actualizarTabla();
 }
 
+// Cierra el modal emergente
 function cerrarModal() {
     document.getElementById('modal-edicion').style.display = 'none';
 }
 
+// Ordenar la tabla por la columna indicada
 function sortTable(column) {
     const order = sortOrder[column] === 'asc' ? 'desc' : 'asc';
     sortOrder[column] = order;
@@ -103,6 +110,7 @@ function sortTable(column) {
     actualizarTabla();
 }
 
+// Eventos para los headers de la tabla
 document.getElementById('header-id').addEventListener('click', () => sortTable('id'));
 document.getElementById('header-nombre').addEventListener('click', () => sortTable('nombre'));
 document.getElementById('header-email').addEventListener('click', () => sortTable('email'));
